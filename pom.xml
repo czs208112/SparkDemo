@@ -23,13 +23,12 @@
             <scope>test</scope>
         </dependency>
 
-        <!--引入了scala-library,就不用在module里加如本地的依赖引用了-->
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
-            <version>2.11.8</version>
-            <!--<scope>compile</scope>-->
-        </dependency>
+        <!--  spark-core 已经依赖了scala-library就不用重复设置了。
+          <dependency>
+              <groupId>org.scala-lang</groupId>
+              <artifactId>scala-library</artifactId>
+              <version>2.11.8</version>
+          </dependency>-->
 
         <!--spark核心依赖-->
         <dependency>
@@ -58,7 +57,7 @@
             <artifactId>spark-mllib_${scala.version}</artifactId>
             <version>${spark.version}</version>
         </dependency>
-        
+
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-hive_${scala.version}</artifactId>
