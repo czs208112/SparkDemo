@@ -65,6 +65,47 @@
         </dependency>
     </dependencies>
 
+    <!-- 配置私服地址 -->
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <url>http://localhost:8081/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus</id>
+            <url>http://localhost:8081/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <!--自己创建的库-->
+        <repository>
+            <id>nexus-releases</id><!--这里的id与角色中配置的id要一致-->
+            <name>my-releases</name>
+            <url>http://localhost:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <!--snapshots库-->
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>my-snapshots</name>
+            <url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
